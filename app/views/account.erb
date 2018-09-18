@@ -7,11 +7,21 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
+<<<<<<< HEAD
   
     <% if Helpers.is_logged_in?(@sessName) %>
     <h1>Welcome <%= Helpers.current_user(@sessName).username %></h1>
     <h3>Your Balance: <%= Helpers.current_user(@sessName).balance %></h3>
     <a href="/logout">Log Out</a> 
+=======
+    
+    <%  @user = Helper.current_user(session) %>
+    <% if Helper.is_logged_in?(session) %>
+      Welcome <%= @user.username %>
+      <a href="/logout">Log Out</a>
+    <% else %>
+      <a href="/">Home</a>
+>>>>>>> ee2ca9efb028a754dd91d66b90ae08b026c509de
     <% end %>
   </body>
 </html>
